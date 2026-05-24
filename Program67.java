@@ -11,24 +11,24 @@ import java.util.Scanner;
         {
             if((iNo % iCnt) == 0)
             {
-               break;
+               return false; // it is Bad programming
             }
         }
 
-        if(iCnt >= (iNo/2)+1)
+        if(iCnt < iNo/2)
         {
-            return true;
+            return false;
         }
         else
         {
-            return false;
+            return true;
         }
 
     }
 
 }
 
-class Program65
+class Program67
 {
    
     public static void main(String A[]) 

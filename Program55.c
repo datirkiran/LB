@@ -1,5 +1,5 @@
  // Input: 8
-// Output: 1 3 5 7
+// Output: 1 2 3 4 5 6 7
 #include <stdio.h>
 
 void Display(int iNo)
@@ -7,7 +7,7 @@ void Display(int iNo)
     int iCnt = 0;
     for(iCnt = 1; iCnt < iNo; iCnt = iCnt + 1)
     {
-        printf("%d/t",iCnt);
+        printf("%d\t",iCnt);
     }
     printf("\n");
 
@@ -19,6 +19,8 @@ int main()
 
     printf("Enter Number : \n");
     scanf("%d",&iValue);
+
+    Display(iValue);
 
     return 0;
 }

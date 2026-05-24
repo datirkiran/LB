@@ -15,20 +15,20 @@ import java.util.Scanner;
             }
         }
 
-        if(iCnt >= (iNo/2)+1)
+        if(iCnt < iNo/2)
         {
-            return true;
+            return false;
         }
         else
         {
-            return false;
+            return true;
         }
 
     }
 
 }
 
-class Program65
+class Program66
 {
    
     public static void main(String A[]) 

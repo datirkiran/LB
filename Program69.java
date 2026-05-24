@@ -6,29 +6,24 @@ import java.util.Scanner;
     public boolean CheckPrime( int iNo)
     {
         int iCnt = 0;
+        boolean bFlag = false;
 
-        for(iCnt = 2; iCnt <= (iNo / 2); iCnt++)
+        for(bFlag = true, iCnt = 2; iCnt <= (iNo / 2); iCnt++)   // Multi initialization
         {
             if((iNo % iCnt) == 0)
             {
+               bFlag = false;
                break;
             }
         }
 
-        if(iCnt >= (iNo/2)+1)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return bFlag;    
 
     }
-
+    
 }
 
-class Program65
+class Program69
 {
    
     public static void main(String A[]) 

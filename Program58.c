@@ -8,7 +8,7 @@ void Display(int iNo)
 
     for(iCnt = 1; iCnt <= iNo; iCnt = iCnt + 2)
     {
-        printf("%d/t",iCnt);
+        printf("%d\t",iCnt);
     }
     printf("\n");
 
@@ -20,6 +20,8 @@ int main()
 
     printf("Enter Number : \n");
     scanf("%d",&iValue);
+
+    Display(iValue);
 
     return 0;
 }
