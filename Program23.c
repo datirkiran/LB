@@ -29,13 +29,8 @@ int CalculateTicketPrices(int iAge)
     else 
     {
         return 400;
-    }
-    
-    
-
+    }  
 }
-
-
 
 int main()
 {
