@@ -5,10 +5,11 @@ int main()
     char Arr[50] = {'\0'}; 
    
     printf("Enter string : \n");
-    scanf("%s", Arr);   // Issue
+    scanf("%[^'\n']s", Arr);  //regular epretion
 
-    printf("Entered string is :%s\n",Arr);
+    printf("Enter string is : %s\n",Arr);
     
+
      return 0;
 }
 
