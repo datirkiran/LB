@@ -22,9 +22,7 @@ int main()
     printf("%c\n", *str);
     str++;
 
-  
-
-     return 0;
+    return 0;
 }
 
    
