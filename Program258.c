@@ -14,7 +14,6 @@ int CountUpdate(char * str)
     str++;
    }
    return iCount;
-   
 }
 
 int main()
@@ -26,7 +25,7 @@ int main()
 
     CountUpdate(Arr);
 
-    printf("Upadated stiring  is : %s\n",Arr);
+    printf("Upadated stiring  is : %s\n", Arr);
 
      return 0;
 }

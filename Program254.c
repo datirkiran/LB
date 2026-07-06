@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int Countsmall(const char * str)
+int CountSmall(const char * str)
 {
     int iCount = 0;
 
@@ -13,9 +13,6 @@ int Countsmall(const char * str)
     str++;
    }
    return iCount;
-   
-   
-
 }
 
 int main()
@@ -23,11 +20,10 @@ int main()
     char Arr[50] = {'\0'};
     int iRet = 0; 
    
-
     printf("Enter string : \n");
     scanf("%[^'\n']s", Arr); 
 
-    iRet = Countsmall(Arr);
+    iRet = CountSmall(Arr);
 
     printf("Friquency small leter is : %d\n",iRet);
 

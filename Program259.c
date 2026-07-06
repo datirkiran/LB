@@ -9,12 +9,11 @@ int CountUpdate(char * str)
     if (*str == 'l')
     {
     *str == 'L';
-    
     }
     str++;
    }
    return iCount;
-   
+ 
 }
 
 int main()

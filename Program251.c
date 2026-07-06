@@ -6,19 +6,19 @@ int Count(const char * str)
 
    while(*str != '\0')
    {
-    if (*str == 'a' || *str == 'A');
-    iCount++;
+    if (*str == 'a' || *str == 'A')
+    {
+        iCount++;  
+    }
     str++;   
    }
    return iCount;
-
 }
 
 int main()
 {
     char Arr[50] = {'\0'};
     int iRet = 0; 
-   
 
     printf("Enter string : \n");
     scanf("%[^'\n']s", Arr); 

@@ -48,11 +48,11 @@ class Program272
 
         iRet = strobj.CountCapital(data);
 
-        System.out.println("Number of c characters : "+iRet);
+        System.out.println("Number of Capital characters : "+iRet);
 
         iRet = strobj.CountSmall(data);
 
-        System.out.println("Number of Smal characters : "+iRet);
+        System.out.println("Number of Small characters : "+iRet);
 
     }
 }

@@ -27,7 +27,7 @@ int main()
 
     iRet = CountCapital(Arr);
 
-    printf("Friquency small leter is : %d\n",iRet);
+    printf("Friquency Capital leter is : %d\n",iRet);
 
      return 0;
 }
