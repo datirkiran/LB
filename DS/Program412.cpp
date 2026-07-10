@@ -156,7 +156,8 @@ void SinglyLL::DeleteFirst()
     else
     { 
         temp = this->first;
-        this->first = this->first->next;    
+        this->first = this->first->next; 
+        delete temp;   
     }
 
     this->iCount--;

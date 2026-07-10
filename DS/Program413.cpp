@@ -79,15 +79,164 @@ void DoublyLL:: InsertFirst(int iNo)
     this->iCount++;
 }
 void DoublyLL::InsertLast(int iNo)
-{}
+{
+
+    PNODE newn = NULL;
+    PNODE temp = NULL;
+    
+    newn = new NODE;
+    newn->data = iNo;
+
+    newn->next = NULL;
+    newn->prev = NULL;             // *
+
+    if(this->first == NULL)
+    {
+        this->first = newn;
+    }
+    else
+    {
+        temp = this->first;
+
+        while(temp->next != NULL)
+        {
+            temp = temp->next;
+        }
+
+        temp->next = newn;
+        newn->prev = temp;          // *
+    }
+
+    this->iCount++;
+}
 void DoublyLL::InsertAtPos(int iNo, int iPos)
-{}
+{
+    int i = 0;
+    PNODE temp = NULL;
+    PNODE newn = NULL;
+
+    if((iPos < 1) || (iPos > iCount+1))
+    {
+       cout<<"Invaid Position\n";
+       return;  
+    }
+
+    if(iPos == 1)
+    {
+        this->InsertFirst(iNo);
+    }
+    else if(iPos == iCount+1)
+    {
+        this->InsertLast(iNo);
+    }
+    else
+    {
+        newn = new NODE;
+        
+        newn->data = iNo;
+        newn->next = NULL;
+
+        temp = this->first;
+
+        for(i = 1; i< iPos-1; i++)
+        {
+            temp = temp->next;
+        }
+
+        newn->next = temp->next;
+        temp->next = newn;
+
+        this->iCount++;
+    }
+}
 void DoublyLL::DeleteFirst()
-{}
+{
+    PNODE temp = NULL;
+
+    if(this->first == NULL)
+    {
+        return;
+    }
+    else if(this->first->next == NULL)
+    {
+        delete this->first;
+        this->first = NULL;
+    }
+    else
+    {
+        temp = this->first;
+        this->first = this->first->next;
+        this->first->prev = NULL;              // *
+        delete temp;     
+    }
+
+    this->iCount--;
+}
 void DoublyLL::DeleteLast()
-{}
+{
+    PNODE temp = NULL;
+
+    if(this->first == NULL)
+    {
+        return;
+    }
+    else if(this->first->next == NULL)
+    {
+        delete this->first;
+        this->first = NULL;
+    }
+    else
+    {
+        temp = this->first;
+
+        while(temp->next->next != NULL)
+        {
+            temp = temp->next;
+        }
+
+        delete temp->next;
+        temp->next = NULL;
+    }
+
+    this->iCount--;
+}
 void DoublyLL::DeleteAtPos(int iPos)
-{}
+{
+    int i = 0;
+    PNODE temp = NULL;
+    PNODE target = NULL;
+    
+    if((iPos <1)||( iPos >iCount))
+    {
+        cout<<"Invalid Position\n";
+        return;
+    }
+
+    if(iPos == 1)
+    {
+        this->DeleteFirst();
+    }
+    else if(iPos == iCount)
+    {
+        this->DeleteLast();
+    }
+    else
+    {
+        temp = this->first;
+
+        for(i = 1; i< iPos-1; i++)
+        {
+            temp = temp->next;
+        }
+
+        target = temp->next;
+
+        temp->next = target->next;
+        delete target;
+
+        this->iCount--;
+    }
+}
 
 int main()
 {
@@ -102,6 +251,45 @@ int main()
 
     iRet = dobj.Count();
     cout<<"Number of element are : "<<iRet<<endl;
+
+    dobj.InsertLast(101);
+    dobj.InsertLast(111);
+    dobj.InsertLast(121);
+    dobj.InsertLast(151);
+
+    dobj.Display();
+
+    iRet = dobj.Count();
+    cout<<"Number of element are : "<<iRet<<endl;
+
+    dobj.DeleteFirst();
+
+    dobj.Display();
+
+    iRet = dobj.Count();
+    cout<<"Number of element are : "<<iRet<<endl;
+
+    dobj.DeleteLast();
+
+    dobj.Display();
+
+    iRet = dobj.Count();
+    cout<<"Number of element are : "<<iRet<<endl;
+
+    dobj.InsertAtPos(105,4);
+
+    dobj.Display();
+
+    iRet = dobj.Count();
+    cout<<"Number of element are : "<<iRet<<endl;
+
+    dobj.DeleteAtPos(4);
+
+    dobj.Display();
+
+    iRet = dobj.Count();
+    cout<<"Number of element are : "<<iRet<<endl;
+        
 
     return 0;
 }
