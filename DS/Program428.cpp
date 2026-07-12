@@ -30,7 +30,6 @@ SinglyCL::SinglyCL()
     this->iCount = 0;
 }
 
-
 int main()
 {
     SinglyCL sobj;
