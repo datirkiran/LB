@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+
+void Display(double Arr[], double Size)
+{
+    int i = 0;
+
+    for(i = 0; i < Size; i++)
+    {
+        cout<<Arr[i]<<"\n";
+    }
+}
+
+double Summation(double Arr[], int Size)
+{
+    int i = 0;
+    double Sum = 0.0;
+
+    for(i = 0; i < Size; i++)
+    {
+        Sum = Sum + Arr[i];
+    }
+
+    return Sum;
+}
+
+int main()
+{
+    double Brr[] = {10.2,20.2,30.2,40.2,50.2};
+
+    Display(Brr, 5);
+
+    cout<<Summation(Brr,5);
+
+    return 0;
+}
